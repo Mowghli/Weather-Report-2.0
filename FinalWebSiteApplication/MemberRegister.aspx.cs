@@ -14,7 +14,17 @@ namespace FinalWebSiteApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
+            HttpCookie cookie = Request.Cookies.Get("Member");
+            if (cookie != null)
+            {
+                if (cookie["Logged"] == "true")
+                {
+                    Response.Redirect("Member.aspx");
+                }
+
+            }
+            /*
             if (Application.Count != 0)
             {
                 MemberPerson Person = (MemberPerson)Application["1"];
@@ -22,7 +32,7 @@ namespace FinalWebSiteApplication
                 {
                     Response.Redirect("Member.aspx");
                 }
-            }
+            }*/
             //Username.Text = "";
             //Password1.Text = "";
             //Password2.Text = "";

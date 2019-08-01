@@ -32,7 +32,4 @@
     <p>
         Want to return to the public page? <a runat="server" href="~/Default">Click here</a>.
     </p>
-    <p>
-        Have a staff account? <a runat="server" href="~/StaffLogin">Sign in as a Staff member</a>
-    </p>
 </asp:Content>

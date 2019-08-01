@@ -11,6 +11,21 @@ namespace FinalWebSiteApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            HttpCookie cookie = Request.Cookies.Get("Member");
+            if (cookie != null)
+            {
+                if (cookie["Logged"] !="true")
+                {
+                    Response.Redirect("MemberLogin.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("MemberLogin.aspx");
+            }
+
+
+            /*
             if (Application.Count == 0)
             {
                 Response.Redirect("MemberLogin.aspx");
@@ -19,11 +34,17 @@ namespace FinalWebSiteApplication
             if (Person.Member_status == false)
             {
                 Response.Redirect("MemberLogin.aspx");
-            }
+            }*/
         }
 
         protected void Signout_Click(object sender, EventArgs e)
         {
+            HttpCookie cookie = Request.Cookies.Get("Member");
+            cookie["Username"] = "";
+            cookie["Logged"] = "false";
+            Response.Cookies.Add(cookie);
+            Response.Redirect("MemberLogin.aspx");
+            /*
             MemberPerson Member;
             MemberPerson FormerMember = new MemberPerson("", "", "");
             Member= (MemberPerson)Application["1"];
@@ -36,7 +57,7 @@ namespace FinalWebSiteApplication
             else
             {
                 Response.Redirect("StaffLogin.aspx");
-            }
+            }*/
         }
     }
 }

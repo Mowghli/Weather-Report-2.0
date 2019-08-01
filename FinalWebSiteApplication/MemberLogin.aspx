@@ -22,9 +22,6 @@
         New user? <a runat="server" href="~/MemberRegister">Sign up as a Member</a>
     </p>
     <p>
-        Have a staff account? <a runat="server" href="~/StaffLogin">Sign in as a Staff member</a>
-    </p>
-    <p>
         Want to return to the public page? <a runat="server" href="~/Default">Click here</a>.
     </p>
 </asp:Content>

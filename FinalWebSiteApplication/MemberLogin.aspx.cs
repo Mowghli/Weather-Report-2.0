@@ -12,6 +12,17 @@ namespace FinalWebSiteApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            HttpCookie cookie = Request.Cookies.Get("Member");
+            if(cookie!=null)
+            {
+                if (cookie["Logged"] == "true")
+                {
+                    Response.Redirect("Member.aspx");
+                }
+
+            }
+            /*
             if (Application.Count != 0)
             {
                 MemberPerson Person = (MemberPerson)Application["1"];
@@ -20,7 +31,7 @@ namespace FinalWebSiteApplication
                     //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('You have already logged in');", true);
                     Response.Redirect("Member.aspx");  
                 }
-            }
+            }*/
            
         }
 
@@ -94,8 +105,12 @@ namespace FinalWebSiteApplication
 
                     if (t == 2)
                     {
-                        MemberPerson Person = new MemberPerson(Username.Text, "Member", "NA");
-                        Application["1"] = Person;
+                        HttpCookie myCookies = new HttpCookie("Member");
+                        myCookies["Username"] = Username.Text;
+                        myCookies["Logged"] = "true";
+                        //myCookies.Expires = DateTime.Now.AddMinutes(10.0);
+                        myCookies.Expires = DateTime.Now.AddMonths(6);
+                        Response.Cookies.Add(myCookies);
                         Response.Redirect("Member.aspx");
                     }
                     else
