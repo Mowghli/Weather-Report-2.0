@@ -8,13 +8,13 @@ using System.Xml;
 
 namespace FinalWebSiteApplication
 {
-    public partial class MemberLogin1 : System.Web.UI.Page
+    public partial class MemberLogin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
             HttpCookie cookie = Request.Cookies.Get("Member");
-            if (cookie != null)
+            if(cookie!=null)
             {
                 if (cookie["Logged"] == "true")
                 {
@@ -22,7 +22,7 @@ namespace FinalWebSiteApplication
                 }
 
             }
-
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -110,12 +110,11 @@ namespace FinalWebSiteApplication
                     Username.Text = "";
                     Password.Text = "";
                 }
-            }
-            catch (Exception g)
+            } catch (Exception g)
             {
                 ErrorLabel.Text = g.Message;
             }
-
+            
         }
     }
 }

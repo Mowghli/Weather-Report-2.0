@@ -1,14 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MemberRegister.aspx.cs" Inherits="FinalWebSiteApplication.MemberRegister1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MemberRegister1.aspx.cs" Inherits="FinalWebSiteApplication.MemberRegister" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <h1>
+<h1>
         Member Registration page
     </h1>
     <p>
@@ -39,9 +32,4 @@
     <p>
         Want to return to the public page? <a runat="server" href="~/Default">Click here</a>.
     </p>
-    <p>
-        Forgot your Password? <a runat="server" href="~/ForgotID">Click here</a>.
-    </p>
-    </form>
-</body>
-</html>
+</asp:Content>

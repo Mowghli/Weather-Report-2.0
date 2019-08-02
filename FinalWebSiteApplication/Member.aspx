@@ -1,6 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Member.aspx.cs" Inherits="FinalWebSiteApplication.Member" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Member.aspx.cs" Inherits="FinalWebSiteApplication.Member1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+      <h1>
         Members Only page
     </h1>
 
@@ -10,4 +18,6 @@
     <p>
         To sign out, click the button: <asp:Button ID="Signout" runat="server" Text="Sign Out" OnClick="Signout_Click" />
     </p>
-</asp:Content>
+    </form>
+</body>
+</html>

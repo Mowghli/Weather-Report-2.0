@@ -7,14 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace FinalWebSiteApplication
 {
-    public partial class Member1 : System.Web.UI.Page
+    public partial class Member : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie cookie = Request.Cookies.Get("Member");
             if (cookie != null)
             {
-                if (cookie["Logged"] != "true")
+                if (cookie["Logged"] !="true")
                 {
                     Response.Redirect("MemberLogin.aspx");
                 }

@@ -6,10 +6,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
+using System.Windows;
 
 namespace FinalWebSiteApplication
 {
-    public partial class MemberRegister1 : System.Web.UI.Page
+    public partial class MemberRegister : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -97,7 +98,7 @@ namespace FinalWebSiteApplication
                 {
                     ErrorLabel.Text = "Username already taken";
                 }
-                else if (Username.Text.Any(x => Char.IsWhiteSpace(x)) || Password1.Text.Any(x => Char.IsWhiteSpace(x)) || Password2.Text.Any(x => Char.IsWhiteSpace(x)))
+                else if (Username.Text.Any(x => Char.IsWhiteSpace(x)) || Password1.Text.Any(x => Char.IsWhiteSpace(x))|| Password2.Text.Any(x => Char.IsWhiteSpace(x)))
                 {
                     ErrorLabel.Text = "Whitespaces are not allowed in your username/password";
                 }
@@ -143,7 +144,7 @@ namespace FinalWebSiteApplication
                     }
                     ErrorLabel.Text = "No Errors";
                 }
-
+                
             }
             catch (Exception g)
             {
